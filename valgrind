@@ -1,0 +1,22 @@
+[root@localhost Programming]# gcc -o leak leak.c
+[root@localhost Programming]# valgrind ./leak
+==6518== Memcheck, a memory error detector for x86-linux.
+==6518== Copyright (C) 2002-2005, and GNU GPL'd, by Julian Seward et al.
+==6518== Using valgrind-2.4.0, a program supervision framework for x86-linux.
+==6518== Copyright (C) 2000-2005, and GNU GPL'd, by Julian Seward et al.
+==6518== For more details, rerun with: -v
+==6518==
+==6518==
+==6518== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 13 from 1)
+==6518== malloc/free: in use at exit: 2304 bytes in 9 blocks.
+==6518== malloc/free: 10 allocs, 1 frees, 2560 bytes allocated.
+==6518== For counts of detected errors, rerun with: -v
+==6518== searching for pointers to 9 not-freed blocks.
+==6518== checked 49152 bytes.
+==6518==
+==6518== LEAK SUMMARY:
+==6518==    definitely lost: 2304 bytes in 9 blocks.
+==6518==      possibly lost: 0 bytes in 0 blocks.
+==6518==    still reachable: 0 bytes in 0 blocks.
+==6518==         suppressed: 0 bytes in 0 blocks.
+==6518== Use --leak-check=full to see details of leaked memory.
